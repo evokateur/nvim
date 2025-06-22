@@ -19,7 +19,7 @@ vim.keymap.set("n", "<F2>", function()
 end, { desc = "Toggle Snacks Explorer" })
 
 vim.g["diagnostics_active"] = true
-function Toggle_diagnostics()
+function toggle_diagnostics()
   if vim.g.diagnostics_active then
     vim.g.diagnostics_active = false
     vim.diagnostic.enable(false)
@@ -32,6 +32,6 @@ end
 vim.keymap.set(
   "n",
   "<leader>xd",
-  Toggle_diagnostics,
-  { noremap = true, silent = true, desc = "Toggle vim diagnostics" }
+  toggle_diagnostics,
+  { noremap = true, silent = true, desc = "Toggle Diagnostics" }
 )
