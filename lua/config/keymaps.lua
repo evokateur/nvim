@@ -17,3 +17,5 @@ vim.keymap.set("", "<C-W><C-W>", ":%s/\\s\\+$//<CR>", { noremap = true })
 vim.keymap.set("n", "<F2>", function()
   Snacks.explorer()
 end, { desc = "Toggle Snacks Explorer" })
+
+vim.keymap.set("n", "<leader>cc", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
