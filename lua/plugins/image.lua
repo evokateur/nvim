@@ -3,6 +3,7 @@ return {
   build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
   opts = {
     processor = "magick_cli",
+    kitty_method = "normal",
     backend = "kitty", -- whatever backend you would like to use
     max_width = 100,
     max_height = 12,
@@ -10,5 +11,6 @@ return {
     max_width_window_percentage = math.huge,
     window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
     window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+    hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" },
   },
 }
