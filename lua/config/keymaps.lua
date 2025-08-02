@@ -14,9 +14,19 @@ vim.keymap.set("", "<F3>", ":noh<CR>", { noremap = true })
 -- :map <C-W><C-W> :%s/\s\+$//<CR>
 vim.keymap.set("", "<C-W><C-W>", ":%s/\\s\\+$//<CR>", { noremap = true })
 
+-- override Snacks explorer keymaps to swap CWD and root behavior
+vim.keymap.set("n", "<leader>e", function()
+  Snacks.explorer()
+end, { desc = "Explorer Snacks (cwd)" })
+
+vim.keymap.set("n", "<leader>E", function()
+  Snacks.explorer.open({ cwd = LazyVim.root() })
+end, { desc = "Explorer Snacks (root dir)" })
+
+-- for NERDTree muscle memory
 vim.keymap.set("n", "<F2>", function()
   Snacks.explorer()
-end, { desc = "Toggle Snacks Explorer" })
+end, { desc = "Explorer Snacks (cwd)" })
 
 vim.keymap.set("n", "<leader>cc", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
 
@@ -41,11 +51,4 @@ vim.keymap.set("n", "<localleader>md", ":MoltenDelete<CR>", { desc = "delete Mol
 -- if you work with html outputs:
 vim.keymap.set("n", "<localleader>mx", ":MoltenOpenInBrowser<CR>", { desc = "open output in browser", silent = true })
 
--- Override Snacks explorer keymaps to swap CWD and root behavior
-vim.keymap.set("n", "<leader>e", function()
-  Snacks.explorer.open({ cwd = vim.uv.cwd() })
-end, { desc = "Explorer Snacks (cwd)" })
-
-vim.keymap.set("n", "<leader>E", function()
-  Snacks.explorer.open({ cwd = LazyVim.root() })
-end, { desc = "Explorer Snacks (root dir)" })
+vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { desc = "Markdown Preview", silent = true })
