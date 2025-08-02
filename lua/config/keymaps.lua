@@ -40,3 +40,12 @@ vim.keymap.set("n", "<localleader>md", ":MoltenDelete<CR>", { desc = "delete Mol
 
 -- if you work with html outputs:
 vim.keymap.set("n", "<localleader>mx", ":MoltenOpenInBrowser<CR>", { desc = "open output in browser", silent = true })
+
+-- Override Snacks explorer keymaps to swap CWD and root behavior
+vim.keymap.set("n", "<leader>e", function()
+  Snacks.explorer.open({ cwd = vim.uv.cwd() })
+end, { desc = "Explorer Snacks (cwd)" })
+
+vim.keymap.set("n", "<leader>E", function()
+  Snacks.explorer.open({ cwd = LazyVim.root() })
+end, { desc = "Explorer Snacks (root dir)" })
