@@ -6,7 +6,7 @@ return {
   config = function()
     require("claude-code").setup({
       window = {
-        enter_insert = false,
+        enter_insert = true,
       },
     })
   end,
