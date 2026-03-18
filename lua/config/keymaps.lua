@@ -2,9 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- :tnoremap <Esc> <C-\><C-n>
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true })
-
 -- :vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 vim.keymap.set("v", "<C-r>", [["hy:%s/<C-r>h//gc<left><left><left>]], { noremap = true })
 
