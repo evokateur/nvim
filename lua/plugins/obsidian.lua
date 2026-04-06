@@ -20,8 +20,8 @@ return {
   opts = {
     workspaces = {
       {
-        name = "deuxième cerveau",
-        path = "~/obsidian-vault",
+        name = "le caveau",
+        path = "~/vaults/caveau",
       },
     },
 
