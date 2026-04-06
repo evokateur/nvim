@@ -21,7 +21,7 @@ return {
     workspaces = {
       {
         name = "le caveau",
-        path = "~/vaults/caveau",
+        path = vim.env.VAULT_PATH,
       },
     },
 
