@@ -24,7 +24,9 @@ return {
         path = vim.env.VAULT_PATH,
       },
     },
-
+    daily_notes = {
+      folder = "areas/l-invention-du-quotidien",
+    },
     -- see below for full list of options 👇
   },
 }
