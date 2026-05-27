@@ -49,3 +49,16 @@ vim.keymap.set("n", "<localleader>md", ":MoltenDelete<CR>", { desc = "delete Mol
 vim.keymap.set("n", "<localleader>mx", ":MoltenOpenInBrowser<CR>", { desc = "open output in browser", silent = true })
 
 vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { desc = "Markdown Preview", silent = true })
+
+-- In ~/.config/nvim/lua/config/keymaps.lua
+
+local function toggle_indent()
+  local current = vim.bo.shiftwidth
+  local next = current == 4 and 2 or 4
+  vim.bo.shiftwidth = next
+  vim.bo.softtabstop = next
+  vim.bo.tabstop = next
+  vim.notify("Indent: " .. next .. " spaces", vim.log.levels.INFO)
+end
+
+vim.keymap.set("n", "<leader>ti", toggle_indent, { desc = "Toggle indent 2/4" })
