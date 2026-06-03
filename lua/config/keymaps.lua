@@ -62,3 +62,5 @@ local function toggle_indent()
 end
 
 vim.keymap.set("n", "<leader>ti", toggle_indent, { desc = "Toggle indent 2/4" })
+
+vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>")
