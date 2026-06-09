@@ -1,12 +1,13 @@
-local function is_dark()
+local function mac_light_mode()
+  if vim.uv.os_uname().sysname ~= "Darwin" then return false end
   local r = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
   local s = r:read("*l")
   r:close()
-  return s == "Dark"
+  return s ~= "Dark"
 end
 
 local function apply_theme()
-  if is_dark() then
+  if not mac_light_mode() then
     vim.o.background = "dark"
     vim.cmd.colorscheme("nightfox")
   else
