@@ -1,8 +1,13 @@
 local function mac_light_mode()
-  if vim.uv.os_uname().sysname ~= "Darwin" then return false end
+  if vim.uv.os_uname().sysname ~= "Darwin" then
+    return false
+  end
   local r = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
-  local s = r:read("*l")
-  r:close()
+  local s
+  if r then
+    s = r:read("*l")
+    r:close()
+  end
   return s ~= "Dark"
 end
 
