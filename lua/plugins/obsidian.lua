@@ -43,7 +43,7 @@ return {
       enabled = true,
       folder = "areas/l-invention-du-quotidien",
       template = "l-invention-du-quotidien.md",
-      date_format = "%Y/%m/%V/%d-%B",
+      date_format = "%Y/%m/semaine-%V/%d-%B",
     },
     -- see below for full list of options 👇
   },
