@@ -1,5 +1,5 @@
 return {
-  "epwalsh/obsidian.nvim",
+  "obsidian-nvim/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
@@ -18,15 +18,32 @@ return {
     -- see below for full list of optional dependencies 👇
   },
   opts = {
-    disable_frontmatter = true,
     workspaces = {
       {
         name = "le caveau",
         path = vim.env.VAULT_PATH,
       },
     },
+    templates = {
+      folder = "areas/computing/obsidian/templates",
+      date_format = "%Y-%m-%d",
+      time_format = "%H%M",
+      substitutions = {
+        jour = function()
+          local d = os.date("%A") --[[@as string]]
+          return d:lower()
+        end,
+        jr = function()
+          local d = os.date("%a") --[[@as string]]
+          return d:lower()
+        end,
+      },
+    },
     daily_notes = {
+      enabled = true,
       folder = "areas/l-invention-du-quotidien",
+      template = "l-invention-du-quotidien.md",
+      date_format = "%Y/%m/%V/%d-%B",
     },
     -- see below for full list of options 👇
   },
