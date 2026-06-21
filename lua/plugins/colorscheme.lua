@@ -16,18 +16,12 @@ local function apply_theme()
     vim.o.background = "dark"
     vim.cmd.colorscheme("nightfox")
   else
-    vim.g.gruvbox_material_background = "soft"
     vim.o.background = "light"
-    vim.cmd.colorscheme("gruvbox-material")
+    vim.cmd.colorscheme("dayfox")
   end
 end
 
 return {
-  {
-    "sainnhe/gruvbox-material",
-    lazy = false,
-    priority = 1000,
-  },
   {
     "EdenEast/nightfox.nvim",
     lazy = false,
