@@ -20,9 +20,14 @@ return {
   },
   opts = {
     legacy_commands = false,
+    frontmatter = { enabled = false },
+    checkbox = {
+      create_new = false,
+      order = { " ", "x" },
+    },
     workspaces = {
       {
-        name = "le caveau",
+        name = "caveau",
         path = vim.env.VAULT_PATH,
       },
     },
