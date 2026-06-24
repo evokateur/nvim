@@ -2,7 +2,7 @@ return {
   "folke/snacks.nvim",
   opts = {
     picker = {
-      include = { ".gitignore", ".env", "*.local.*", "*.override.*", ".claude" },
+      include = { "*.local.*", "*.override.*" },
       sources = {
         explorer = {
           actions = {
