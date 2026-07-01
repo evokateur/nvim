@@ -25,8 +25,6 @@ vim.keymap.set("n", "<F2>", function()
   Snacks.explorer()
 end, { desc = "Explorer Snacks (cwd)" })
 
-vim.keymap.set("n", "<leader>cc", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
-
 vim.keymap.set("n", "<localleader>e", ":MoltenEvaluateOperator<CR>", { desc = "evaluate operator", silent = true })
 vim.keymap.set(
   "n",
