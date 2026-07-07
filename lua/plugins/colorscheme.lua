@@ -11,13 +11,35 @@ local function mac_light_mode()
   return s ~= "Dark"
 end
 
+local _override = nil -- "dark" | "light" | nil (nil = follow OS)
+
+local function apply_dark()
+  vim.o.background = "dark"
+  vim.cmd.colorscheme("nightfox")
+end
+
+local function apply_light()
+  vim.o.background = "light"
+  vim.cmd.colorscheme("dayfox")
+end
+
 local function apply_theme()
-  if not mac_light_mode() then
-    vim.o.background = "dark"
-    vim.cmd.colorscheme("nightfox")
+  local light = _override ~= nil and (_override == "light") or mac_light_mode()
+  if light then
+    apply_light()
   else
-    vim.o.background = "light"
-    vim.cmd.colorscheme("dayfox")
+    apply_dark()
+  end
+end
+
+local function toggle_theme()
+  local currently_light = vim.o.background == "light"
+  if currently_light then
+    _override = "dark"
+    apply_dark()
+  else
+    _override = "light"
+    apply_light()
   end
 end
 
@@ -34,6 +56,7 @@ return {
         callback = apply_theme,
       })
       vim.api.nvim_create_autocmd("FocusGained", { callback = apply_theme })
+      vim.keymap.set("n", "<leader>td", toggle_theme, { desc = "Toggle dark/light theme" })
     end,
   },
 }
