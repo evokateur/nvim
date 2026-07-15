@@ -20,7 +20,7 @@ end
 
 local function apply_light()
   vim.o.background = "light"
-  vim.cmd.colorscheme("dayfox")
+  vim.cmd.colorscheme("catppuccin-latte")
 end
 
 local function apply_theme()
@@ -44,6 +44,15 @@ local function toggle_theme()
 end
 
 return {
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      flavour = "latte",
+    },
+  },
   {
     "EdenEast/nightfox.nvim",
     lazy = false,
