@@ -62,3 +62,13 @@ end
 vim.keymap.set("n", "<leader>ti", toggle_indent, { desc = "Toggle indent 2/4" })
 
 vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>")
+
+vim.keymap.set("n", "<leader>vs", function()
+  vim.cmd("silent !sync-vault")
+  vim.cmd("redraw!")
+end, { desc = "Run sync-vault" })
+
+vim.keymap.set("n", "<leader>vS", function()
+  vim.cmd("belowright split")
+  vim.cmd("terminal sync-vault")
+end, { desc = "Run sync-vault in terminal" })
